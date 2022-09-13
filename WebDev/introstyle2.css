@@ -1,0 +1,68 @@
+@keyframes fadeInAnimation {
+0% {
+    opacity: 0;
+}
+100% {
+opacity: 1;
+  }
+}
+
+body{
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.bg {
+    width:100%;
+    height:100vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("WDpics/Intro/0.jpg");
+    background-size:cover;
+}
+.bg{
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  background-color: grey;
+}
+
+.bg{
+  top: 0;
+}
+
+.contentarea{
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    text-align: center;
+}
+.content p{
+    font-size:20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn{
+    border:none;
+    padding:15px;
+    margin-top:40px;
+    border-radius: 4px;
+    color:rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    cursor: pointer;
+    background:#222;
+}
+.btn a{
+  color: inherit;
+}
+
+.btn:hover{
+  transition: 0.3s ease;
+  background: grey;
+}

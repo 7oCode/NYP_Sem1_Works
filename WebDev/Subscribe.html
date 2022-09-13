@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Subscribe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+      function youSure(){
+      var yn = confirm("Are you sure this is really you?");
+        if(yn == true){
+          document.getElementById('sub').submit();
+        }
+        else{
+          document.getElementById('sub').reset();
+          alert("Please check your credentials again");
+      }
+    }
+      function formCheck(){
+        var name = document.forms["sub"]['name'].value;
+        var email = document.forms["sub"]['email'].value;
+        var imgtype = document.forms["sub"]['imgtypes'].value;
+        var apic = document.forms["sub"]['photog'].value;
+        var devicetype = document.forms["sub"]['device'].value;
+        if(name == ""){
+          alert("You're missing your name");
+        }
+        else if (email == ""){
+          alert("You're missing your email");
+        }
+        else if (imgtype == "") {
+          alert("Please choose a style");
+        }
+        else if (apic == "") {
+          alert("Do you actively take pictures?");
+        }
+        else if (devicetype == "") {
+          alert("What do you take photos with?(or not)");
+        }
+        else {
+          var n1 = document.forms["sub"]['name'].value;
+          var e1 = document.forms["sub"]['email'].value;
+          var i1 = document.forms["sub"]['imgtypes'].value;
+          var a1 = document.forms["sub"]['photog'].value;
+          var d1 = document.forms["sub"]['device'].value;
+          youSure();
+          document.forms["sub"]['name'].value = n1;
+          document.forms["sub"]['email'].value = e1;
+          document.forms["sub"]['imgtypes'].value = i1;
+          document.forms["sub"]['photog'].value = a1;
+          document.forms["sub"]['device'].value = d1;
+          event.preventDefault();
+        }
+        }
+    </script>
+  </head>
+  <body>
+    <div class="BGsub">
+    <div class="sidebar">
+      <a href ="home.html"><img src="cams.png" id="homelogo"></a>
+      <a href="About.html" class="selectors">About</a>
+      <a href="Resources.html" class="selectors">Resources</a>
+      <a href="#" class="selectors">Subscribe</a>
+    </div>
+    <br>
+    <div class="Regform">
+    <form name="sub" class="sub" id='sub' action="formsubmit.php" method="post">
+      <img src="sgif.gif" id="sublogo">
+      <p>If you'd like to be updated on my future content, please register below
+        and let me get to know you too! :)
+      </p>
+      <fieldset>
+        <legend>Register</legend>
+        <label for="name">Name:</label>
+        <input type="text" name="name" pattern="[a-zA-Z]{+}" value="" oninvalid="this.setCustomValidity('Only letters here')" required>
+        <br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" value=""oninvalid="this.setCustomValidity('Please check your email address')"required>
+        <br>
+        <br>
+        <label for="imgtypes">Favourite Style:</label>
+        <select class="" name="imgtypes" value="" oninvalid="this.setCustomValidity('Please choose a style')" required>
+          <option value="" selected disabled hidden>Choose here</option>
+          <option value="People">People</option>
+          <option value="Architecture">Architecture</option>
+          <option value="Landscape">Landscape</option>
+        </select>
+        <br>
+        <div class="apic">
+          <label for="photog">Do you actively take pictures?</label>
+            <div class="radbtn">
+              <input type="radio" name="photog" value="Yes"required>Yes
+              <input type="radio" name="photog" value="No"required>No
+            </div>
+        </div>
+        <div class="devicetype">
+          <label for="device">What do you take photos with?</label>
+          <select class="" name="device" value="" required oninvalid="this.setCustomValidity('Please select an answer')">
+              <option value="" selected disabled hidden>Choose here</option>
+              <option value="Phone Camera">Phone Camera</option>
+              <option value="Point and Shoot">Point and Shoot Camera</option>
+              <option value="DSLR Camera">DSLR Camera</option>
+              <option value="Mirroless Camera">Mirroless Camera</option>
+              <option value="Film Camera">Film Camera</option>
+              <option value="Don't take photos">Nothing, I don't take photos</option>
+          </select>
+        </div>
+        <br>
+        <input type="submit" name="Submit" value="Submit" id="submit" onclick="formCheck()">
+        <footer>&copy; Web Development Assignment, 220274X</footer>
+
+      </fieldset>
+    </form>
+   </div>
+ </div>
+  </body>
+</html>

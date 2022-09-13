@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+      var admins = {"user": "Admin", "password": "Password"};
+      console.log(admins['user']);
+      console.log(admins['password']);
+      function aCheck(){
+        var userName = document.getElementById('uname').value;
+        var passWord = document.getElementById('upass').value;
+        //window.location.assign("http://localhost/phpmyadmin");
+        if (userName == admins['user'] && passWord == admins['password']){
+          window.location.assign("http://localhost/phpmyadmin");
+        }
+        else{
+          alert("Username or Password is incorrect");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="login">
+      <label for="username">Username:</label>
+      <input type="text" name="username" value="" id="uname">
+      <br>
+      <label for="pword">Password:</label>
+      <input type="password" name="pword" value="" id="upass">
+      <br>
+      <input type="submit" name="Submit" value="Submit" id="admincheck" onclick=aCheck()>
+    </div>
+  </body>
+</html>

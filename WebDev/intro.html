@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="introstyle2.css">
+  </head>
+  <body>
+
+    <div class="bg">
+        <div class="contentarea">
+           <div class="content">
+              <p>Through my retinas, through my lenses</p>
+              <button class="btn" onclick="nextpage()">Click Here</button>
+           </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var i = 0;
+    var images = [];
+    time = 3000;
+    images[0] = 'WDpics/intro/0.jpg';
+    images[1] = 'WDpics/intro/1.jpg';
+    images[2] = 'WDpics/intro/2.jpg';
+    console.log(document.querySelector('.bg'));
+    const bChange = document.querySelector('.bg');
+    function changeImage(){
+      if(i < images.length){
+        bChange.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("+images[i]+")";
+        i++;
+      }
+      else{
+        i = 0;
+      }
+      setTimeout("changeImage()", time);
+    }
+    function nextpage(){
+      window.location = 'index.html';
+    }
+    window.onload = changeImage;
+    </script>
+  </body>
+</html>
